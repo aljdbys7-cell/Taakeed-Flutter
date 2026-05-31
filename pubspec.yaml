@@ -1,5 +1,5 @@
-name: taaked_app
-description: "Instant Payment Validation Application"
+name: taaaked_flutter
+description: تطبيق تأكيد للتحقق الفوري من الدفع
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -9,11 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
+  flutter_tts: ^3.8.3
+
+dev_dependencies:
+  flutter_test:
     sdk: flutter
-  google_fonts: any
-  intl: ^0.20.2
 
 flutter:
   uses-material-design: true
-  
