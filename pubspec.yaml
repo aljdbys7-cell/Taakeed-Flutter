@@ -1,5 +1,5 @@
 name: taaaked_flutter
-description: تطبيق تأكيد للتحقق الفوري من الدفع
+description: تطبيق تأكيد التحقق الفوري من الدفع
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -16,6 +16,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-dependency_overrides:
-  matcher: 0.12.16
