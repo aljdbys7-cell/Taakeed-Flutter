@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'dart:async';
 
 void main() {
@@ -42,7 +41,6 @@ class _HomeScreenState extends State<HomeScreen> {
   static const platform = MethodChannel('notification_listener');
   Transaction? _latestTx;
   List<Transaction> _history = [];
-  final FlutterTts _tts = FlutterTts();
   String _currentTime = '';
 
   final Map<String, Color> walletColors = {
@@ -82,15 +80,9 @@ class _HomeScreenState extends State<HomeScreen> {
           _latestTx = tx;
           _history = [tx,..._history.take(4)];
         });
-        _playSound();
+        print("تم استلام مبلغ ${tx.amount} ريال");
       }
     });
-  }
-
-  Future<void> _playSound() async {
-    await _tts.setLanguage("ar-SA");
-    await _tts.setSpeechRate(0.6);
-    await _tts.speak("تم استلام مبلغ ${_latestTx?.amount} ريال");
   }
 
   void _updateTime() {
@@ -141,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       flex: 12,
                       child: _latestTx == null
-                       ? Container(
+                      ? Container(
                             decoration: BoxDecoration(
                               color: const Color(0xFF1A1A1A),
                               borderRadius: BorderRadius.circular(28),
