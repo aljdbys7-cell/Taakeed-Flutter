@@ -1,4 +1,3 @@
-yaml
 name: taaked_app
 description: "Instant Payment Validation Application"
 publish_to: 'none'
